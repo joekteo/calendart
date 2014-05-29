@@ -1,23 +1,13 @@
 $ ->
 
-  # $('#advanced-fields').hide()
+# --------------------------------------
+# LINKS & TEMPLATES
 
-  # Handlebars.registerHelper 'latestMessage', (messages, options) ->
-  #   if messages and messages.length > 0
-  #     messages[messages.length - 1].message
-  #   else
-  #     new Handlebars.SafeString( "<span class=\"no-messages\">No messages yet.</span>" )
-
-  # unsetActive = () ->
-    # $('#header-navlinks').children().removeClass('active')
   unsetActive = (lnk) ->
-    # lnk = $(lnk)
-    # console.log lnk
     lnk.closest('ul').children().removeClass('active')
 
   setActive = (lnk) ->
     lnk = $(lnk)
-    # console.log lnk.parent().parent().children()
     unsetActive(lnk)
     lnk.parent().addClass('active')
   
@@ -31,9 +21,14 @@ $ ->
   contactTemplate = Handlebars.compile $("#contact-template").html()
   termsTemplate = Handlebars.compile $("#terms-template").html()
   privacyTemplate = Handlebars.compile $("#privacy-template").html()
-  
   main = $('#main')
   main.html eventsTemplate
+
+  beforeLoginTemplate = Handlebars.compile $("#before-login-template").html()
+  afterLoginTemplate = Handlebars.compile $("#after-login-template").html()
+  profileTemplate = Handlebars.compile $("#profile-template").html()
+  loginNav = $('#login-nav')
+  loginNav.html beforeLoginTemplate
 
   $('#header-navlinks').on 'click', '#events-link', (e) ->
     e.preventDefault()
@@ -53,32 +48,44 @@ $ ->
 
   $('#footer-navlinks').on 'click', '#help-link', (e) ->
     e.preventDefault()
-    # setActive(@)
     main.html helpTemplate()
 
   $('#footer-navlinks').on 'click', '#about-link', (e) ->
     e.preventDefault()
-    # setActive(@)
     main.html aboutTemplate()
 
   $('#footer-navlinks').on 'click', '#jobs-link', (e) ->
     e.preventDefault()
-    # setActive(@)
     main.html jobsTemplate()
 
   $('#footer-navlinks').on 'click', '#contact-link', (e) ->
     e.preventDefault()
-    # setActive(@)
     main.html contactTemplate()
 
   $('#footer-navlinks').on 'click', '#terms-link', (e) ->
     e.preventDefault()
-    # setActive(@)
     main.html termsTemplate()
 
   $('#footer-navlinks').on 'click', '#privacy-link', (e) ->
     e.preventDefault()
-    # setActive(@)
     main.html privacyTemplate()
+
+
+  $('#login-nav').on 'click', 'button', (e) ->
+    e.preventDefault()
+    loginNav.html afterLoginTemplate()
+
+  $('#login-nav').on 'click', '#before-login-link', (e) ->
+    e.preventDefault()
+    loginNav.html beforeLoginTemplate()
+    main.html eventsTemplate()
+
+  $('#login-nav').on 'click', '#profile-link', (e) ->
+    e.preventDefault()
+    main.html profileTemplate()
+
+# --------------------------------------
+# ########
+
 
 

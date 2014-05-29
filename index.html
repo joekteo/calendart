@@ -54,26 +54,29 @@
       <p>This is the PRIVACY POLICY page</p>
     </script>
 
-    <script id="beforelogin-template" type="text/x-handlebars-template">
-      <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle signup-login" data-toggle="dropdown">Sign up | Log in <b class="caret"></b></a>
-          <ul class="dropdown-menu dropdown-login">
-            <li class="dropdown-header">Sign in:</li>
-            <li><input type="text" placeholder="Username or Email" class="form-control"></li>
-            <li><input type="text" placeholder="Password" class="form-control"></li>
-            <li>
-              <button type="submit" class="btn btn-success">Log in</button>
-              <button type="submit" class="btn btn-success">Sign up</button>
-            </li>
-            <li><a href="#">Forgot password?</a></li>
-          </ul>
-        </li>
-      </ul>
+    <script id="profile-template" type="text/x-handlebars-template">
+      <p>This is MY PROFILE page</p>
     </script>
 
-    <script id="afterlogin-template" type="text/x-handlebars-template">
-      <p>PAUL</p>
+    <script id="before-login-template" type="text/x-handlebars-template">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle signup-login" data-toggle="dropdown">Sign up | Log in <b class="caret"></b></a>
+        <ul class="dropdown-menu dropdown-login">
+          <li class="dropdown-header">Sign in:</li>
+          <li><input type="text" placeholder="Username or Email" class="form-control"></li>
+          <li><input type="text" placeholder="Password" class="form-control"></li>
+          <li>
+            <button type="submit" class="btn btn-success">Log in</button>
+            <button type="submit" class="btn btn-success">Sign up</button>
+          </li>
+          <li><a href="#">Forgot password?</a></li>
+        </ul>
+      </li>
+    </script>
+
+    <script id="after-login-template" type="text/x-handlebars-template">
+      <li><a id="profile-link" href="#">My Profile</a></li>
+      <li><a id="before-login-link" href="#reviews"><span class="glyphicon glyphicon-log-out"></span></a></li>
     </script>
 
   </head>
@@ -96,20 +99,8 @@
             <li><a id="news-link" href="#">News</a></li>
             <li><a id="reviews-link" href="#reviews">Reviews</a></li>
           </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle signup-login" data-toggle="dropdown">Sign up | Log in <b class="caret"></b></a>
-              <ul class="dropdown-menu dropdown-login">
-                <li class="dropdown-header">Sign in:</li>
-                <li><input type="text" placeholder="Username or Email" class="form-control"></li>
-                <li><input type="text" placeholder="Password" class="form-control"></li>
-                <li>
-                  <button type="submit" class="btn btn-success">Log in</button>
-                  <button type="submit" class="btn btn-success">Sign up</button>
-                </li>
-                <li><a href="#">Forgot password?</a></li>
-              </ul>
-            </li>
+          <ul id="login-nav" class="nav navbar-nav navbar-right">
+            <!-- Login / Logout bar -->
           </ul>
           <form class="navbar-form navbar-right" role="form">
             <div class="form-group">
