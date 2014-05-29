@@ -18,8 +18,16 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <script id="events-template" type="text/x-handlebars-template">
+      <p>This is the Events page</p>
+    </script>
+
     <script id="news-template" type="text/x-handlebars-template">
       <p>This is the News page</p>
+    </script>
+
+    <script id="reviews-template" type="text/x-handlebars-template">
+      <p>This is the Reviews page</p>
     </script>
 
   </head>
@@ -40,7 +48,7 @@
           <ul id="header-navlinks" class="nav navbar-nav">
             <li class="active"><a id="events-link" href="#">Events</a></li>
             <li><a id="news-link" href="#">News</a></li>
-            <li><a href="#contact">Reviews</a></li>
+            <li><a id="reviews-link" href="#reviews">Reviews</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
@@ -74,9 +82,7 @@
 
     <!-- Begin page content -->
     <main id="main" class="main container">
-      <div class="container">
-      
-      </div>  
+     
     </main>
 
     <div id="footer">
