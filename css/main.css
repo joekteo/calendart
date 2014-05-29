@@ -49,3 +49,14 @@ code {
   color: #ccc;
   content: "";
 }
+
+.dropdown-menu.dropdown-login {
+  padding: 5px 5px;
+  min-width: 200px;
+}
+.dropdown-menu.dropdown-login > li {
+  font-size: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  text-align: center;
+}

@@ -18,6 +18,17 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <script id="events-template" type="text/x-handlebars-template">
+      <p>This is the Links page</p>
+      <p>This is the Links page</p>
+      <p>This is the Links page</p>
+      <p>This is the Links page</p>
+      <p>This is the Links page</p>
+      <p>This is the Links page</p>
+      <p>This is the Links page</p>
+      <p>This is the Links page</p>
+    </script>
+
   </head>
   <body>
     <!-- Fixed navbar -->
@@ -33,31 +44,35 @@
           <a class="navbar-brand" href="#">Calend'Art</a>
         </div>
         <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Events</a></li>
+          <ul id="header-navlinks" class="nav navbar-nav">
+            <li class="active"><a id="events-link" href="#">Events</a></li>
             <li><a href="#about">News</a></li>
             <li><a href="#contact">Reviews</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sign up | Log in <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><input type="text" placeholder="Email" class="form-control"></li>
+              <ul class="dropdown-menu dropdown-login">
+<!--                 <li class="dropdown-header">Sign in:</li> -->
+                <li><input type="text" placeholder="Username or Email" class="form-control"></li>
                 <li><input type="text" placeholder="Password" class="form-control"></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
                 <li>
                   <button type="submit" class="btn btn-success">Log in</button>
                   <button type="submit" class="btn btn-success">Sign up</button>
                 </li>
+                <li><a href="#">Forgot password?</a></li>
               </ul>
             </li>
           </ul>
           <form class="navbar-form navbar-right" role="form">
             <div class="form-group">
               <input type="text" placeholder="Search" class="form-control">
+              <!-- <div class="input-group"> -->
+                <!-- <input type="text" class="form-control"> -->
+                <!-- <span class="input-group-btn"> -->
+                  <!-- <button class="btn btn-default" type="button">Go!</button> -->
+                <!-- </span> -->
+              <!-- </div> -->
             </div>
           </form>
         </div><!--/.nav-collapse -->
@@ -65,19 +80,17 @@
     </div>
 
     <!-- Begin page content -->
-    <div class="container">
-      <div class="page-header">
-        <h1>Sticky footer with fixed navbar</h1>
-      </div>
-      <p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code>padding-top: 60px;</code> on the <code>body > .container</code>.</p>
-      <p>Back to <a href="../sticky-footer">the default sticky footer</a> minus the navbar.</p>
-    </div>
+    <main id="main" class="main container">
+      <div class="container">
+      
+      </div>  
+    </main>
 
     <div id="footer">
       <div class="container">
         <ol class="breadcrumb">
         <li><a href="#">Help</a></li>
-        <li><a href="#">About</a></li>
+        <li><a id="about-link" href="#">About</a></li>
         <li><a href="#">Jobs</a></li>
         <li><a href="#">Contact Us</a></li>
         <li><a href="#">Terms of Service</a></li>
@@ -88,7 +101,9 @@
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Handlebars -->
+    <script src="js/handlebars-v1.3.0.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.js"></script>
     <script src="js/main.js"></script>
