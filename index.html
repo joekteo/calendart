@@ -19,15 +19,61 @@
     <![endif]-->
 
     <script id="events-template" type="text/x-handlebars-template">
-      <p>This is the Events page</p>
+      <p>This is the EVENTS page</p>
     </script>
 
     <script id="news-template" type="text/x-handlebars-template">
-      <p>This is the News page</p>
+      <p>This is the NEWS page</p>
     </script>
 
     <script id="reviews-template" type="text/x-handlebars-template">
-      <p>This is the Reviews page</p>
+      <p>This is the REVIEWS page</p>
+    </script>
+
+    <script id="help-template" type="text/x-handlebars-template">
+      <p>This is the HELP page</p>
+    </script>
+
+    <script id="about-template" type="text/x-handlebars-template">
+      <p>This is the ABOUT page</p>
+    </script>
+
+    <script id="jobs-template" type="text/x-handlebars-template">
+      <p>This is the JOBS page</p>
+    </script>
+
+    <script id="contact-template" type="text/x-handlebars-template">
+      <p>This is the CONTACT US page</p>
+    </script>
+
+    <script id="terms-template" type="text/x-handlebars-template">
+      <p>This is the TERMS OF SERVICE page</p>
+    </script>
+
+    <script id="privacy-template" type="text/x-handlebars-template">
+      <p>This is the PRIVACY POLICY page</p>
+    </script>
+
+    <script id="beforelogin-template" type="text/x-handlebars-template">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle signup-login" data-toggle="dropdown">Sign up | Log in <b class="caret"></b></a>
+          <ul class="dropdown-menu dropdown-login">
+            <li class="dropdown-header">Sign in:</li>
+            <li><input type="text" placeholder="Username or Email" class="form-control"></li>
+            <li><input type="text" placeholder="Password" class="form-control"></li>
+            <li>
+              <button type="submit" class="btn btn-success">Log in</button>
+              <button type="submit" class="btn btn-success">Sign up</button>
+            </li>
+            <li><a href="#">Forgot password?</a></li>
+          </ul>
+        </li>
+      </ul>
+    </script>
+
+    <script id="afterlogin-template" type="text/x-handlebars-template">
+      <p>PAUL</p>
     </script>
 
   </head>
@@ -52,9 +98,9 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sign up | Log in <b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle signup-login" data-toggle="dropdown">Sign up | Log in <b class="caret"></b></a>
               <ul class="dropdown-menu dropdown-login">
-<!--                 <li class="dropdown-header">Sign in:</li> -->
+                <li class="dropdown-header">Sign in:</li>
                 <li><input type="text" placeholder="Username or Email" class="form-control"></li>
                 <li><input type="text" placeholder="Password" class="form-control"></li>
                 <li>
@@ -87,13 +133,13 @@
 
     <div id="footer">
       <div class="container">
-        <ol class="breadcrumb">
-        <li><a href="#">Help</a></li>
+        <ol id="footer-navlinks" class="breadcrumb">
+        <li><a id="help-link" href="#">Help</a></li>
         <li><a id="about-link" href="#">About</a></li>
-        <li><a href="#">Jobs</a></li>
-        <li><a href="#">Contact Us</a></li>
-        <li><a href="#">Terms of Service</a></li>
-        <li><a href="#">Privacy Policy</a></li>
+        <li><a id="jobs-link" href="#">Jobs</a></li>
+        <li><a id="contact-link" href="#">Contact Us</a></li>
+        <li><a id="terms-link" href="#">Terms of Service</a></li>
+        <li><a id="privacy-link" href="#">Privacy Policy</a></li>
         <li class="active">&copy Calend'Art. All rights reserved.</li>
       </ol>
       </div>
