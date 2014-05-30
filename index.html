@@ -153,14 +153,23 @@
                 <input id="event-tags" class="form-control" name="event[tags]" placeholder="Add tags (separated by commas)">
               </div>
             </div>
-            <div class="col-md-8">
-              <div class="form-group">
+          </div>
+
+          <div class="row">
+            <div class="col-md-3">
+              <div class="form-group margin-bottom-35">
                 <label class="radio-inline">
                   <input type="radio" id="free-event" name="event-price" value="true" checked="">Free event
                 </label>
                 <label class="radio-inline">
                   <input type="radio" id="paid-event" name="event-price" value="false"> Paid event
                 </label>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="form-group hide" id="event-price-show">
+                <label for="event-price-amount" class="sr-only">Event Price amount</label>
+                <input id="event-price-amount" class="form-control" name="event[price-amount]" placeholder="Price">
               </div>
             </div>
           </div>
@@ -173,20 +182,6 @@
         </div>
       </div>
     </script>
-
-When creating events, Users (or Organisers?) can add all related information (
-<!-- title + url,  -->
-<!-- venue + description + url,  -->
-<!-- dates + times,  CALENDAR? -->
-<!-- artists + description + url,  -->
-<!-- curator,  -->
-<!-- pictures,  -->
-invitation, 
-price, 
-tags, 
-<!-- genre,  -->
-videos, 
-links
 
     <script id="help-template" type="text/x-handlebars-template">
       <h1>This is the HELP page</h1>

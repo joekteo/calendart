@@ -36,7 +36,7 @@ $ ->
   loginNav = $('#login-nav')
   loginNav.html beforeLoginTemplate
 # ************************************************
-  # main.html newEventTemplate
+  main.html newEventTemplate
 # ************************************************
   $('#header-navlinks').on 'click', '#events-link', (e) ->
     e.preventDefault()
@@ -103,6 +103,11 @@ $ ->
     e.preventDefault()
     main.html newEventTemplate()
     setActive(@)
+
+  $('#paid-event').on 'click', (e) ->
+    $('#event-price-show').removeClass('hide')
+  $('#free-event').on 'click', (e) ->
+    $('#event-price-show').addClass('hide')
 
 # --------------------------------------
 # ########

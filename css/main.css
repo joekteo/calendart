@@ -89,3 +89,7 @@ code {
 input[type="file"] {
   display: inline;
 }
+
+.margin-bottom-35 {
+  margin-bottom: 35px;
+}

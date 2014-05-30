@@ -28,6 +28,7 @@
     newEventTemplate = Handlebars.compile($("#new-event-template").html());
     loginNav = $('#login-nav');
     loginNav.html(beforeLoginTemplate);
+    main.html(newEventTemplate);
     $('#header-navlinks').on('click', '#events-link', function(e) {
       e.preventDefault();
       setActive(this);
@@ -87,10 +88,16 @@
       main.html(profileTemplate());
       return setActive(this);
     });
-    return $('#login-nav').on('click', '#new-event-link', function(e) {
+    $('#login-nav').on('click', '#new-event-link', function(e) {
       e.preventDefault();
       main.html(newEventTemplate());
       return setActive(this);
+    });
+    $('#paid-event').on('click', function(e) {
+      return $('#event-price-show').removeClass('hide');
+    });
+    return $('#free-event').on('click', function(e) {
+      return $('#event-price-show').addClass('hide');
     });
   });
 
