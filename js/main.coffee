@@ -35,7 +35,9 @@ $ ->
   newEventTemplate = Handlebars.compile $("#new-event-template").html()
   loginNav = $('#login-nav')
   loginNav.html beforeLoginTemplate
-
+# ************************************************
+  # main.html newEventTemplate
+# ************************************************
   $('#header-navlinks').on 'click', '#events-link', (e) ->
     e.preventDefault()
     setActive(@)
