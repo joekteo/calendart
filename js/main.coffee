@@ -6,7 +6,7 @@ $ ->
   events = [
     { 
       title: "Sed magna purus fermentum"
-      artist: "Joseph Stalin"
+      artist: "Jane Woof"
       venue: "HK Gallery"
       date: "5-30-14"
       description: "Cras varius. Curabitur vestibulum aliquam leo. Pellentesque libero tortor, tincidunt et, tincidunt eget, semper nec, quam." 
@@ -23,31 +23,31 @@ $ ->
     {
       title: "Curabitur blandit mollis lacus"
       artist: "Jeff Steam"
-      venue: "Mon Kok Market"
+      venue: "HK History Museum"
       date: "5-31-14"
       description: "Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Quisque id odio. Vivamus aliquet elit ac nisl."
       poster: "assets/images/hkhm.png"
     }
     {
       title: "Donec quam felis ultricies"
-      artist: "Jeff Steam"
-      venue: "Mon Kok Market"
+      artist: "Turpis Morbi"
+      venue: "HK Museum of Art"
       date: "5-31-14"
       description: "Fusce a quam. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis. Morbi mattis ullamcorper velit."
       poster: "assets/images/hkma.png"
     }
     {
       title: "Morbi mattis ullamcorper"
-      artist: "Jeff Steam"
-      venue: "Mon Kok Market"
+      artist: "Sem Libero"
+      venue: "HK Modern Museum"
       date: "5-31-14"
       description: "Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc. Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis orci. Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
       poster: "assets/images/hkmm.png"
     }
     {
       title: "Sed lectus"
-      artist: "Jeff Steam"
-      venue: "Mon Kok Market"
+      artist: "Sit Amet"
+      venue: "HK Science Museum"
       date: "5-31-14"
       description: "Vestibulum fringilla pede sit amet augue. Nulla consequat massa quis enim. Curabitur at lacus ac velit ornare lobortis."
       poster: "assets/images/hksm.jpg"
@@ -94,7 +94,9 @@ $ ->
   $('#header-navlinks').on 'click', '#events-link', (e) ->
     e.preventDefault()
     setActive(@)
-    main.html eventsTemplate()
+    main.html eventsTemplate(
+      events: events
+      )
 
   $('#header-navlinks').on 'click', '#news-link', (e) ->
     e.preventDefault()
