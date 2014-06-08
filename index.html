@@ -20,6 +20,95 @@
 
     <script id="events-template" type="text/x-handlebars-template">
       <h1>This is the EVENTS page</h1>
+      <div class="row">
+        <div class="col-sm-3 col-md-3 events-filter">
+          <form role="form" class="filtered-search-form">
+            <div class="form-group">
+              <label for="filtered-search">Which event would you like to attend?</label>
+              <input type="search" class="form-control" id="filtered-search" placeholder="Artist, exhbition, location, or venue">
+            </div>
+            <div class="form-group filter-checkbox filter-checkbox" id="exhbition">
+              <label>Exhibition Name</label>
+              <ul class="list-unstyled">
+                <li><input type="checkbox" name="filter-exhibition" value="optionxx" id="option-exhibition-1"><label for="option-exhibition-1">Option 1</label></li>
+                <li><input type="checkbox" name="filter-exhibition" value="optionxx" id="option-exhibition-2"><label for="option-exhibition-2">Option 2</label></li>
+                <li><input type="checkbox" name="filter-exhibition" value="optionxx" id="option-exhibition-3"><label for="option-exhibition-3">Option 3</label></li>
+                <li><input type="checkbox" name="filter-exhibition" value="optionxx" id="option-exhibition-4"><label for="option-exhibition-4">Option 4</label></li>
+              </ul>
+            </div>
+            <div class="form-group filter-checkbox" id="artist">
+              <label>Artist</label>
+              <ul class="list-unstyled">
+                <li><input type="checkbox" name="filter-artist" value="optionxx" id="option-artist-1"><label for="option-artist-1">Option 1</label></li>
+                <li><input type="checkbox" name="filter-artist" value="optionxx" id="option-artist-2"><label for="option-artist-2">Option 2</label></li>
+                <li><input type="checkbox" name="filter-artist" value="optionxx" id="option-artist-3"><label for="option-artist-3">Option 3</label></li>
+                <li><input type="checkbox" name="filter-artist" value="optionxx" id="option-artist-4"><label for="option-artist-4">Option 4</label></li>
+              </ul>
+            </div>
+            <div class="form-group filter-checkbox" id="venue">
+              <label>Venue</label>
+              <ul class="list-unstyled">
+                <li><input type="checkbox" name="filter-venue" value="optionxx" id="option-venue-1"><label for="option-venue-1">Option 1</label></li>
+                <li><input type="checkbox" name="filter-venue" value="optionxx" id="option-venue-2"><label for="option-venue-2">Option 2</label></li>
+                <li><input type="checkbox" name="filter-venue" value="optionxx" id="option-venue-3"><label for="option-venue-3">Option 3</label></li>
+                <li><input type="checkbox" name="filter-venue" value="optionxx" id="option-venue-4"><label for="option-venue-4">Option 4</label></li>
+              </ul>
+            </div>
+            <div class="form-group filter-checkbox" id="location">
+              <label>Location</label>
+              <ul class="list-unstyled">
+                <li><input type="checkbox" name="filter-location" value="optionxx" id="option-location-1"><label for="option-location-1">Option 1</label></li>
+                <li><input type="checkbox" name="filter-location" value="optionxx" id="option-location-2"><label for="option-location-2">Option 2</label></li>
+                <li><input type="checkbox" name="filter-location" value="optionxx" id="option-location-3"><label for="option-location-3">Option 3</label></li>
+                <li><input type="checkbox" name="filter-location" value="optionxx" id="option-location-4"><label for="option-location-4">Option 4</label></li>
+              </ul>
+            </div>
+            <div class="form-group filter-checkbox" id="artstyle">
+              <label>ArtStyle</label>
+              <ul class="list-unstyled">
+                <li><input type="checkbox" name="filter-artstyle" value="optionxx" id="option-artstyle-1"><label for="option-artstyle-1">Option 1</label></li>
+                <li><input type="checkbox" name="filter-artstyle" value="optionxx" id="option-artstyle-2"><label for="option-artstyle-2">Option 2</label></li>
+                <li><input type="checkbox" name="filter-artstyle" value="optionxx" id="option-artstyle-3"><label for="option-artstyle-3">Option 3</label></li>
+                <li><input type="checkbox" name="filter-artstyle" value="optionxx" id="option-artstyle-4"><label for="option-artstyle-4">Option 4</label></li>
+              </ul>
+            </div>
+            <div class="form-group filter-checkbox" id="price">
+              <label>Price Range</label>
+              <ul class="list-unstyled">
+                <li><input type="checkbox" name="filter-price" value="optionxx" id="option-price-1"><label for="option-price-1">Option 1</label></li>
+                <li><input type="checkbox" name="filter-price" value="optionxx" id="option-price-2"><label for="option-price-2">Option 2</label></li>
+                <li><input type="checkbox" name="filter-price" value="optionxx" id="option-price-3"><label for="option-price-3">Option 3</label></li>
+                <li><input type="checkbox" name="filter-price" value="optionxx" id="option-price-4"><label for="option-price-4">Option 4</label></li>
+              </ul>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-md-9">
+          {{#each events}}
+            <div class="row event-show">
+              <div class="col-md-4">
+               <img src={{poster}} width="100%" alt="poster">
+              </div>
+              <div class="col-md-8">
+                <dl class="dl-horizontal dl-event-show">
+                  <dt>Exhibition</dt>
+                    <dd>{{title}}</dd>
+                  <dt>Artist</dt>
+                    <dd>{{artist}}</dd>
+                  <dt>Venue</dt>
+                    <dd>{{venue}}</dd>
+                  <dt>Date</dt>
+                    <dd>{{date}}</dd>
+                  <dt>Description</dt>
+                    <dd>{{description}}</dd>
+                </dl>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+
+      </div>
     </script>
 
     <script id="news-template" type="text/x-handlebars-template">
@@ -32,155 +121,154 @@
 
     <script id="new-event-template" type="text/x-handlebars-template">
       <h1>Create a new event</h1>
-        <form id="new-event-form" method="GET" action="#">
-          
-          <div class="row">
-            <h3>Event</h3>
-            <div class="col-md-8">
-              <div class="form-group">
-                <label for="event-title" class="sr-only">Title</label>
-                <input id="event-title" class="form-control" name="event[title]" placeholder="Title of the event">
-              </div>
-              <div class="form-group">
-                <label for="event-description" class="sr-only">Description</label>
-                <textarea id="event-description" class="form-control" name="event[description]" placeholder="Describe the event"></textarea>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">              
-            <div class="col-md-4">
-              <div class="form-group">
-                <label for="event-url" class="sr-only">Event website</label>
-                <input id="event-url" class="form-control" name="event[url]" placeholder="Event website"></input>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="form-group">
-                <p class="help-inline">Add image: </p>
-                <label for="event-image" class="sr-only">Event image</label>
-                <input type="file" accept="image/*" id="event-image" name="event[image]"></input>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <h3>Venue</h3>
-            <div class="col-md-4">
-              <div class="form-group">
-                <label for="event-venue-name" class="sr-only">Name of the venue</label>
-                <input id="event-venue-name" class="form-control" name="event[venue-name]" placeholder="Name of the venue">
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="form-group">
-                <label for="event-venue-url" class="sr-only">Venue URL</label>
-                <input id="event-venue-url" class="form-control" name="event[venue-url]" placeholder="Website">
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-4">
-              <div class="form-group">
-                <label for="event-venue-open" class="sr-only">Venue Opening Times</label>
-                <input id="event-venue-open" class="form-control" name="event[venue-open]" placeholder="Opening Times">
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="form-group">
-                <label for="event-venue-location" class="sr-only">Venue Location</label>
-                <select id="event-venue-location" class="form-control" name="event[venue-location]">
-                  <option>Location</option>
-                  <option>Hong Kong Island</option>
-                  <option>Kowloon</option>
-                  <option>New Territories</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">              
-            <h3>Artists and Curators</h3>
-            <div class="col-md-4">
-              <div class="form-group">
-                <label for="event-artists" class="sr-only">Artists</label>
-                <textarea id="event-artists" class="form-control" name="event[artists]" placeholder="Artists (separated by new line)"></textarea>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="form-group">
-                <label for="event-curators" class="sr-only">Curators</label>
-                <textarea id="event-curators" class="form-control" name="event[curators]" placeholder="Curators (separated by new line)"></textarea>
-              </div>
-            </div>
-          </div>
-          <div class="row">              
-            <div class="col-md-4">
-              <div class="form-group">
-                <label for="event-artists-url" class="sr-only">Artists website</label>
-                <input id="event-artists-url" class="form-control" name="event[artists-url]" placeholder="Artist website"></input>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="form-group">
-                <label for="event-curators-url" class="sr-only">Curators website</label>
-                <input id="event-curators-url" class="form-control" name="event[curators-url]" placeholder="Curator website"></input>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <h3>Additional information</h3>
-            <div class="col-md-4">
-              <div class="form-group">
-                <label for="event-genre" class="sr-only">Event Genre</label>
-                <select id="event-genre" class="form-control" name="event[genre]">
-                  <option>Genre</option>
-                  <option>Contemporary Art</option>
-                  <option>Modern Art</option>
-                  <option>Street Art</option>
-                  <option>...</option>
-                  <option>...</option>
-                  <option>...</option>
-                  <option>...</option>
-                </select>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="form-group">
-                <label for="event-tags" class="sr-only">Event Tags</label>
-                <input id="event-tags" class="form-control" name="event[tags]" placeholder="Add tags (separated by commas)">
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-3">
-              <div class="form-group margin-bottom-35">
-                <label class="radio-inline">
-                  <input type="radio" id="free-event" name="event-price" value="true" checked="">Free event
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" id="paid-event" name="event-price" value="false"> Paid event
-                </label>
-              </div>
-            </div>
-            <div class="col-md-2">
-              <div class="form-group hide" id="event-price-show">
-                <label for="event-price-amount" class="sr-only">Event Price amount</label>
-                <input id="event-price-amount" class="form-control" name="event[price-amount]" placeholder="Price">
-              </div>
-            </div>
-          </div>
-            
+      <form id="new-event-form" method="GET" action="#">
+        
+        <div class="row">
+          <h3>Event</h3>
+          <div class="col-md-8">
             <div class="form-group">
-              <input id="create-event" type="submit" class="btn btn-primary" value="Create the event!">
+              <label for="event-title" class="sr-only">Title</label>
+              <input id="event-title" class="form-control" name="event[title]" placeholder="Title of the event">
             </div>
-
-          </form>
+            <div class="form-group">
+              <label for="event-description" class="sr-only">Description</label>
+              <textarea id="event-description" class="form-control" name="event[description]" placeholder="Describe the event"></textarea>
+            </div>
+          </div>
         </div>
-      </div>
+
+        <div class="row">              
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="event-url" class="sr-only">Event website</label>
+              <input id="event-url" class="form-control" name="event[url]" placeholder="Event website"></input>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <p class="help-inline">Add image: </p>
+              <label for="event-image" class="sr-only">Event image</label>
+              <input type="file" accept="image/*" id="event-image" name="event[image]"></input>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <h3>Venue</h3>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="event-venue-name" class="sr-only">Name of the venue</label>
+              <input id="event-venue-name" class="form-control" name="event[venue-name]" placeholder="Name of the venue">
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="event-venue-url" class="sr-only">Venue URL</label>
+              <input id="event-venue-url" class="form-control" name="event[venue-url]" placeholder="Website">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="event-venue-open" class="sr-only">Venue Opening Times</label>
+              <input id="event-venue-open" class="form-control" name="event[venue-open]" placeholder="Opening Times">
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="event-venue-location" class="sr-only">Venue Location</label>
+              <select id="event-venue-location" class="form-control" name="event[venue-location]">
+                <option>Location</option>
+                <option>Hong Kong Island</option>
+                <option>Kowloon</option>
+                <option>New Territories</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">              
+          <h3>Artists and Curators</h3>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="event-artists" class="sr-only">Artists</label>
+              <textarea id="event-artists" class="form-control" name="event[artists]" placeholder="Artists (separated by new line)"></textarea>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="event-curators" class="sr-only">Curators</label>
+              <textarea id="event-curators" class="form-control" name="event[curators]" placeholder="Curators (separated by new line)"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">              
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="event-artists-url" class="sr-only">Artists website</label>
+              <input id="event-artists-url" class="form-control" name="event[artists-url]" placeholder="Artist website"></input>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="event-curators-url" class="sr-only">Curators website</label>
+              <input id="event-curators-url" class="form-control" name="event[curators-url]" placeholder="Curator website"></input>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <h3>Additional information</h3>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="event-genre" class="sr-only">Event Genre</label>
+              <select id="event-genre" class="form-control" name="event[genre]">
+                <option>Genre</option>
+                <option>Contemporary Art</option>
+                <option>Modern Art</option>
+                <option>Street Art</option>
+                <option>...</option>
+                <option>...</option>
+                <option>...</option>
+                <option>...</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="event-tags" class="sr-only">Event Tags</label>
+              <input id="event-tags" class="form-control" name="event[tags]" placeholder="Add tags (separated by commas)">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3">
+            <div class="form-group margin-bottom-35">
+              <label class="radio-inline">
+                <input type="radio" id="free-event" name="event-price" value="true" checked="">Free event
+              </label>
+              <label class="radio-inline">
+                <input type="radio" id="paid-event" name="event-price" value="false"> Paid event
+              </label>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="form-group hide" id="event-price-show">
+              <label for="event-price-amount" class="sr-only">Event Price amount</label>
+              <input id="event-price-amount" class="form-control" name="event[price-amount]" placeholder="Price">
+            </div>
+          </div>
+        </div>
+          
+        <div class="form-group">
+          <input id="create-event" type="submit" class="btn btn-primary" value="Create the event!">
+        </div>
+
+      </form>
     </script>
 
     <script id="help-template" type="text/x-handlebars-template">
@@ -209,6 +297,41 @@
 
     <script id="profile-template" type="text/x-handlebars-template">
       <h1>This is MY PROFILE page</h1>
+      <div class="row">
+        <div class="col-md-3">
+          <img src="/assets/images/profile-picture.png" width="200px" height="200px">
+        </div>
+        <div class="col-md-9">
+          <dl class="dl-horizontal dl-profile">
+            <dt>User name: </dt>
+              <dd>Bob Smith</dd>
+            <dt>Location: </dt>
+              <dd>Hong Kong</dd>
+            <dt>Webpage: </dt>
+              <dd>http://google.com</dd>
+            <dt>Date joined: </dt>
+              <dd>June 2014</dd>
+            <dt>Personal description: </dt>
+              <dd>Big fan of street art, contemporary art and model for body painting</dd>
+          </dl>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <dl class="dl-horizontal dl-profile">
+            <dt>Favorite events:</dt>
+              <dd>Exhibition 1</dd>
+              <dd>Exhibition 2</dd>
+            <dt>Artists followed</dt>
+              <dd>John Doe, Robert Billy</dd>
+            <dt>Events attended: </dt>
+              <dd>Exhibition 1</dd>
+              <dd>Exhibition 2</dd>
+            <dt>Last event reviews: </dt>
+              <dd>John Doe, Robert Billy</dd>
+          </dl>
+        </div>
+      </div>
     </script>
 
     <script id="before-login-template" type="text/x-handlebars-template">
@@ -251,7 +374,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Calend'Art</a>
+          <a class="navbar-brand" href="/">Calend'Art</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul id="header-navlinks" class="nav navbar-nav">
@@ -290,7 +413,7 @@
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/jquery.min.js"></script>
     <!-- Handlebars -->
     <script src="js/handlebars-v1.3.0.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

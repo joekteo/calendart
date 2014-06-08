@@ -3,6 +3,57 @@ $ ->
 # --------------------------------------
 # LINKS & TEMPLATES
 
+  events = [
+    { 
+      title: "Sed magna purus fermentum"
+      artist: "Joseph Stalin"
+      venue: "HK Gallery"
+      date: "5-30-14"
+      description: "Cras varius. Curabitur vestibulum aliquam leo. Pellentesque libero tortor, tincidunt et, tincidunt eget, semper nec, quam." 
+      poster: "assets/images/art-show.jpg"
+    }
+    { 
+      title: "Cras ultricies mi"
+      artist: "Billy Bob"
+      venue: "Central Library"
+      date: "5-31-14"
+      description: "Nulla porta dolor. Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi. Sed a libero." 
+      poster: "assets/images/banzal-art.jpg"
+    }
+    {
+      title: "Curabitur blandit mollis lacus"
+      artist: "Jeff Steam"
+      venue: "Mon Kok Market"
+      date: "5-31-14"
+      description: "Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Quisque id odio. Vivamus aliquet elit ac nisl."
+      poster: "assets/images/hkhm.png"
+    }
+    {
+      title: "Donec quam felis ultricies"
+      artist: "Jeff Steam"
+      venue: "Mon Kok Market"
+      date: "5-31-14"
+      description: "Fusce a quam. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis. Morbi mattis ullamcorper velit."
+      poster: "assets/images/hkma.png"
+    }
+    {
+      title: "Morbi mattis ullamcorper"
+      artist: "Jeff Steam"
+      venue: "Mon Kok Market"
+      date: "5-31-14"
+      description: "Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc. Nunc egestas, augue at pellentesque laoreet, felis eros vehicula leo, at malesuada velit leo quis pede. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis orci. Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
+      poster: "assets/images/hkmm.png"
+    }
+    {
+      title: "Sed lectus"
+      artist: "Jeff Steam"
+      venue: "Mon Kok Market"
+      date: "5-31-14"
+      description: "Vestibulum fringilla pede sit amet augue. Nulla consequat massa quis enim. Curabitur at lacus ac velit ornare lobortis."
+      poster: "assets/images/hksm.jpg"
+    }
+  ]
+
   unsetActive = () ->
     $('#header-navlinks').children().removeClass('active')
     $('#login-nav').children().children().removeClass('active')
@@ -27,7 +78,9 @@ $ ->
   termsTemplate = Handlebars.compile $("#terms-template").html()
   privacyTemplate = Handlebars.compile $("#privacy-template").html()
   main = $('#main')
-  main.html eventsTemplate
+  main.html eventsTemplate(
+      events: events
+      )
 
   beforeLoginTemplate = Handlebars.compile $("#before-login-template").html()
   afterLoginTemplate = Handlebars.compile $("#after-login-template").html()
@@ -36,7 +89,7 @@ $ ->
   loginNav = $('#login-nav')
   loginNav.html beforeLoginTemplate
 # ************************************************
-  main.html newEventTemplate
+  # main.html newEventTemplate
 # ************************************************
   $('#header-navlinks').on 'click', '#events-link', (e) ->
     e.preventDefault()
